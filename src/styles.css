@@ -6,3 +6,7 @@
     --greyish-blue: #5A698F;
     --semi-dark-blue: #161D2F;
 }
+
+* {
+    background-color: var(--dark-blue);
+}

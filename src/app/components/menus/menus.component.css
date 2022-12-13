@@ -26,10 +26,16 @@
     gap: 2.5rem;    
 }
 
-.menu__options > img {
-    width: 20px;
+.icon__home_style{
+    color: #5a698f;
+    font-size: 20px;
     cursor: pointer;
 }
+
+.icon__home_style:hover{
+    color: var(--red);
+}
+
 
 .menu__avatar {
     display: flex;
