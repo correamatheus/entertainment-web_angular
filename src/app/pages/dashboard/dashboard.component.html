@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="navbar">
+    <app-menus></app-menus>
+  </div>
+  <div class="content">
+    <app-search-input></app-search-input>
+    <h2 class="title__trending">Trending</h2>
+    <div class="trending">
+      <div class="card__trending" *ngFor="let info of trending">
+        <img [src]="info.thumbnail.trending.small" class="tranding__img" />
+        <ul class="card__trending--info">
+          <li>{{ info.year }}</li>
+          <li>{{ info.category }}</li>
+          <li>{{ info.rating }}</li>
+        </ul>
+        <!-- <span class="card__trending--info"></span>
+        <span class="card__trending--info">{{ info.category }}</span>
+        <span class="card__trending--info">{{ info.rating }}</span> -->
+      </div>
+    </div>
+
+    <h2 class="title__recommended">Recommended for you</h2>
+    <div class="container__recommended">
+      <div class="card__recommended">
+        <img src="" alt="" srcset="" />
+        <span class="card_info">2016</span>
+        <span class="card_info">Movie</span>
+        <span class="card_info">PG</span>
+        <p class="card_description">The Great Lands</p>
+      </div>
+      <div class="card__recommended"></div>
+      <div class="card__recommended"></div>
+      <div class="card__recommended"></div>
+    </div>
+  </div>
+</div>
