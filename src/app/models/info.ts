@@ -4,7 +4,8 @@ import { trending } from "./trending";
 export type info = {
     title: string;
     thumbnail: {
-      trending: trending
+      trending: trending,
+      regular: regular
     };
     year: number;
     category: string;

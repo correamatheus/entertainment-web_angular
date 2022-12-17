@@ -19,4 +19,9 @@ export class DashboardService {
     );
   }
 
+  getRecommended(): Observable<info[]> {
+    return this.httpClient.get<info[]>(`${this.baseURL}`).pipe(
+      map((result)=> result.filter((result) => result.isTrending === false))
+    )
+  }
 }

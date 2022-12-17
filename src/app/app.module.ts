@@ -10,6 +10,10 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SwiperModule } from 'swiper/angular';
+
+import {CarouselModule} from 'primeng/carousel';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    SwiperModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

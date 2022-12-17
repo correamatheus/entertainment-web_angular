@@ -9,6 +9,9 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
   trending: info[] = [];
+  recommended: info[] = [];
+
+
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
@@ -16,6 +19,17 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getTrending().subscribe({
       next: (res) => {
         this.trending = res
+        console.log(res)
+      }
+    })
+
+    this.getRecommended();
+  }
+
+  getRecommended(){
+    this.dashboardService.getRecommended().subscribe({
+      next: (res) => {
+        this.recommended = res
         console.log(res)
       }
     })
