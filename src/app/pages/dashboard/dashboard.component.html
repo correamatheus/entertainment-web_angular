@@ -12,15 +12,13 @@
 
           <div class="card__trending">
             <img [src]="info.thumbnail.trending.large" class="tranding__img" />
+            <img class="card_bookmark" [src]="info.isBookmarked ? '../../../assets/isbookmarked.png' : '../../../assets/nobookmarked.png' " />
             <ul class="card__trending--info">
               <li>{{ info.year }}</li>
               <li>{{ info.category }}</li>
               <li>{{ info.rating }}</li>
             </ul>
             <h3 class="card__trending--title">{{ info.title }}</h3>
-            <!-- <span class="card__trending--info"></span>
-            <span class="card__trending--info">{{ info.category }}</span>
-            <span class="card__trending--info">{{ info.rating }}</span> -->
           </div>
 
 
@@ -34,10 +32,12 @@
     <div class="container__recommended">
       <div class="card__recommended" *ngFor="let item of recommended">
         <img class="recommended__img" [src]="item.thumbnail.regular.small" />
+        <img class="card_bookmark" [src]="item.isBookmarked ? '../../../assets/isbookmarked.png' : '../../../assets/nobookmarked.png' " />
         <span class="card_info">{{ item.year }}</span>
         <span class="card_info">{{ item.category }}</span>
         <span class="card_info">{{ item.rating }}</span>
         <p class="card_description">{{ item.title }}</p>
+
       </div>
     </div>
   </div>

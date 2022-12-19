@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .content {
@@ -81,6 +81,7 @@
   }
 
 .card__recommended {
+  position: relative;
   width: 17.5rem;
   height: 14rem;
   margin-bottom: 2rem;
@@ -101,4 +102,18 @@
 
   color: var(--pure-white);
 
+}
+
+
+
+
+
+.card_bookmark{
+  position:absolute;
+  /* padding: 8px;
+  border-radius: 50%;
+  background:rgba(16, 20, 30, 0.5);
+  opacity: 0.8; */
+  right: 1rem;
+  top: 1rem
 }

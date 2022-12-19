@@ -15,12 +15,14 @@ import { SwiperModule } from 'swiper/angular';
 import {CarouselModule} from 'primeng/carousel';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MenusComponent,
     SearchInputComponent,
-    DashboardComponent
+    DashboardComponent,
+
   ],
   imports: [
     BrowserModule,

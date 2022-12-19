@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { info } from 'src/app/models/info';
 import { DashboardService } from 'src/app/services/dashboard.service';
+import { faBookmark} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,9 @@ import { DashboardService } from 'src/app/services/dashboard.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  faBookmark=faBookmark;
+
+
   trending: info[] = [];
   recommended: info[] = [];
 
@@ -34,5 +38,6 @@ export class DashboardComponent implements OnInit {
       }
     })
   }
+
 
 }
