@@ -1,28 +1,19 @@
 # EntertainmentWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+## Descrição
 
-## Development server
+Este projeto foi desenvolvido em Angular 14 e visa simular uma aplicação de catálogo de filmes em séries, em que você pode salvar a suas séries e filmes favoritas.
+Neste projeto foi utilizado todos os conceitos bases do angular como Rotas, Bindings, Injeção de dependência através de services entre outros recursos oferecidos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias utilizadas
 
-## Code scaffolding
+- Angular
+- Typescript
+- Css
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Como utilizar
 
-## Build
+- Instale as depedências como *npm install*
+- Após instalar as dependências, estando dentro da pasta do projeto basta usar *ng serve* para que o projeto seja buildado.
+- Como o projeto consome um arquivo JSON é preciso que também seja utilizado *json-server --watch db.json* (Ele simula uma API localmente).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# entertainment-web_angular
