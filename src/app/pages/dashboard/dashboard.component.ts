@@ -9,11 +9,15 @@ import { faBookmark} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
   faBookmark=faBookmark;
 
 
+  showIconPlay: boolean = false;
   trending: info[] = [];
   recommended: info[] = [];
+  movieAndSerieSearched: string = "";
+  movieAndSerieFinded: info[] = [];
 
 
   constructor(private dashboardService: DashboardService) { }
@@ -23,7 +27,6 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getTrending().subscribe({
       next: (res) => {
         this.trending = res
-        console.log(res)
       }
     })
 
@@ -34,10 +37,24 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getRecommended().subscribe({
       next: (res) => {
         this.recommended = res
-        console.log(res)
       }
     })
   }
 
+  showPlayMouseOver(i: number){
+    this.showIconPlay = true;
+  }
 
+  hiddenPlayMouseOut(i: number){
+      this.showIconPlay = false;
+  }
+
+  receiveSearch(search: string | any) {
+    this.movieAndSerieSearched = search;
+    this.dashboardService.getSearched(search).subscribe({
+      next: (res) => {
+        this.movieAndSerieFinded = res;
+      }
+    })
+  }
 }

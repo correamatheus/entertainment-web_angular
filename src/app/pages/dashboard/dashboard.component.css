@@ -32,6 +32,7 @@
   height: 10rem;
   border-radius: 8px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .title__trending {
@@ -40,7 +41,7 @@
   color: var(--pure-white);
 }
 
-.title__recommended {
+.title__recommended, .title__searched {
   margin-top: 2.5rem;
   font-weight: 400;
   color: var(--pure-white);
@@ -116,4 +117,20 @@
   opacity: 0.8; */
   right: 1rem;
   top: 1rem
+}
+
+.card__icon--play{
+  position:absolute;
+  left: 30%;
+  bottom: 50%;
+
+}
+
+.card__container{
+  cursor: pointer;
+}
+
+
+.searched {
+  margin-top: 2.5rem;
 }

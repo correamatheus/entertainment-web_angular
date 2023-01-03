@@ -1,0 +1,28 @@
+<h2 class="title__recommended">{{title}}</h2>
+<div class="container__recommended">
+  <div class="card__recommended" *ngFor="let item of infoArray; index as i;">
+    <img
+      class="recommended__img"
+      [src]="item.thumbnail.regular.small"
+      (mouseenter)="showPlayMouseOver(i)"
+      (mouseleave)="hiddenPlayMouseOut(i)"
+    />
+    <img
+      class="card_bookmark"
+      [src]="
+        item.isBookmarked
+          ? '../../../assets/isbookmarked.png'
+          : '../../../assets/nobookmarked.png'
+      "
+    />
+    <span class="card_info">{{ item.year }}</span>
+    <span class="card_info">{{ item.category }}</span>
+    <span class="card_info">{{ item.rating }}</span>
+    <p class="card_description">{{ item.title }}</p>
+    <img
+      class="card__icon--play"
+      *ngIf="showIconPlay"
+      src="../../../assets/icon-play-withbackground.png"
+    />
+  </div>
+</div>

@@ -3,16 +3,70 @@
     <app-menus></app-menus>
   </div>
   <div class="content">
-    <app-search-input></app-search-input>
+    <app-search-input (movieSearched)="receiveSearch($event)"></app-search-input>
+    <div class="searched" *ngIf="movieAndSerieFinded">
+
+      <!-- <h2 class="title__searched">Searched</h2> -->
+
+      <div class="card__recommended"  *ngFor="let item of movieAndSerieFinded; index as i;">
+        <img
+          class="recommended__img"
+          [src]="item.thumbnail.regular.small"
+          (mouseenter)="showPlayMouseOver(i)"
+          (mouseleave)="hiddenPlayMouseOut(i)"
+        />
+        <img
+          class="card_bookmark"
+          [src]="
+            item.isBookmarked
+              ? '../../../assets/isbookmarked.png'
+              : '../../../assets/nobookmarked.png'
+          "
+        />
+        <span class="card_info">{{ item.year }}</span>
+        <span class="card_info">{{ item.category }}</span>
+        <span class="card_info">{{ item.rating }}</span>
+        <p class="card_description">{{ item.title }}</p>
+        <img
+          class="card__icon--play"
+          *ngIf="showIconPlay"
+          src="../../../assets/icon-play-withbackground.png"
+        />
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
     <h2 class="title__trending">Trending</h2>
 
     <div class="trending">
-      <p-carousel [value]="trending" [numVisible]="2" [numScroll]="2" [showIndicators]="false" [showNavigators]="true">
+      <p-carousel
+        [value]="trending"
+        [numVisible]="2"
+        [numScroll]="2"
+        [showIndicators]="false"
+        [showNavigators]="true"
+      >
         <ng-template let-info pTemplate="item">
-
           <div class="card__trending">
             <img [src]="info.thumbnail.trending.large" class="tranding__img" />
-            <img class="card_bookmark" [src]="info.isBookmarked ? '../../../assets/isbookmarked.png' : '../../../assets/nobookmarked.png' " />
+            <img
+              class="card_bookmark"
+              [src]="
+                info.isBookmarked
+                  ? '../../../assets/isbookmarked.png'
+                  : '../../../assets/nobookmarked.png'
+              "
+            />
             <ul class="card__trending--info">
               <li>{{ info.year }}</li>
               <li>{{ info.category }}</li>
@@ -20,24 +74,36 @@
             </ul>
             <h3 class="card__trending--title">{{ info.title }}</h3>
           </div>
-
-
-
         </ng-template>
       </p-carousel>
-
     </div>
 
     <h2 class="title__recommended">Recommended for you</h2>
     <div class="container__recommended">
-      <div class="card__recommended" *ngFor="let item of recommended">
-        <img class="recommended__img" [src]="item.thumbnail.regular.small" />
-        <img class="card_bookmark" [src]="item.isBookmarked ? '../../../assets/isbookmarked.png' : '../../../assets/nobookmarked.png' " />
+      <div class="card__recommended" *ngFor="let item of recommended; index as i;">
+        <img
+          class="recommended__img"
+          [src]="item.thumbnail.regular.small"
+          (mouseenter)="showPlayMouseOver(i)"
+          (mouseleave)="hiddenPlayMouseOut(i)"
+        />
+        <img
+          class="card_bookmark"
+          [src]="
+            item.isBookmarked
+              ? '../../../assets/isbookmarked.png'
+              : '../../../assets/nobookmarked.png'
+          "
+        />
         <span class="card_info">{{ item.year }}</span>
         <span class="card_info">{{ item.category }}</span>
         <span class="card_info">{{ item.rating }}</span>
         <p class="card_description">{{ item.title }}</p>
-
+        <img
+          class="card__icon--play"
+          *ngIf="showIconPlay"
+          src="../../../assets/icon-play-withbackground.png"
+        />
       </div>
     </div>
   </div>

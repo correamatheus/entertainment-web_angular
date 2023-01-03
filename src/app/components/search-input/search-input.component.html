@@ -1,5 +1,5 @@
 <div class="search__container">
     <span><fa-icon [icon]="faSearch" class="icon"></fa-icon></span>
-    <input type="text" placeholder="Search for movies or Tv series" class="search__input">
+    <input type="text" placeholder="Search for movies or Tv series" (input)="sendSearch($event)" class="search__input">
 </div>
 

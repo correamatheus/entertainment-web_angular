@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ResourceLoader } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -22,6 +23,12 @@ export class DashboardService {
   getRecommended(): Observable<info[]> {
     return this.httpClient.get<info[]>(`${this.baseURL}`).pipe(
       map((result)=> result.filter((result) => result.isTrending === false))
+    )
+  }
+
+  getSearched(movieAndSerieSearched: string): Observable<info[]> {
+    return this.httpClient.get<info[]>(`${this.baseURL}`).pipe(
+      map((result) => result.filter((filtered) => filtered.title === movieAndSerieSearched ))
     )
   }
 }
