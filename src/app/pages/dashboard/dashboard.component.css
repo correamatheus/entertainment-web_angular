@@ -133,4 +133,6 @@
 
 .searched {
   margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem
 }

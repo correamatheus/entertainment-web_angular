@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   faBookmark=faBookmark;
 
-
+  moviesAndSeries: info[] = [];
   showIconPlay: boolean = false;
   trending: info[] = [];
   recommended: info[] = [];
@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit(): void {
+
 
     this.dashboardService.getTrending().subscribe({
       next: (res) => {
@@ -57,4 +58,6 @@ export class DashboardComponent implements OnInit {
       }
     })
   }
+
+
 }

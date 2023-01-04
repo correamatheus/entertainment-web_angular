@@ -28,7 +28,7 @@ export class DashboardService {
 
   getSearched(movieAndSerieSearched: string): Observable<info[]> {
     return this.httpClient.get<info[]>(`${this.baseURL}`).pipe(
-      map((result) => result.filter((filtered) => filtered.title === movieAndSerieSearched ))
+      map((result) => result.filter((filtered) => filtered.title.toLowerCase().includes(movieAndSerieSearched.toLowerCase())))
     )
   }
 }
