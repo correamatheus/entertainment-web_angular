@@ -64,7 +64,8 @@ export class DashboardComponent implements OnInit {
     this.recommended.filter((el: any) => {
       if(el.title == title){
         el.isBookmarked ? el.isBookmarked = false : el.isBookmarked = true
-        this.dashboardService.changeBookmark(this.recommended).subscribe((res)=> console.log(res))
+        this.dashboardService.changeBookmark(el, title)
+
       }
     })
   }

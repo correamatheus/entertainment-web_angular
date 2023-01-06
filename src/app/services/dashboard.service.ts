@@ -32,7 +32,8 @@ export class DashboardService {
     )
   }
 
-  changeBookmark(itensAtualizados: info[]){
-    return this.httpClient.put<info[]>(`${this.baseURL}`, itensAtualizados)
+  changeBookmark(itensAtualizados: boolean, title: string){
+    const body = {"isBookmarked" : itensAtualizados}
+    return this.httpClient.put<any>(`${this.baseURL}/${title}`, itensAtualizados).subscribe(data => console.log(data))
   }
 }
