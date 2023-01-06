@@ -44,6 +44,7 @@ export class DashboardComponent implements OnInit {
 
   showPlayMouseOver(i: number){
     this.showIconPlay = true;
+    // console.log(i)
   }
 
   hiddenPlayMouseOut(i: number){
@@ -55,6 +56,15 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getSearched(search).subscribe({
       next: (res) => {
         this.movieAndSerieFinded = res;
+      }
+    })
+  }
+
+  bookmarked(title: string){
+    this.recommended.filter((el: any) => {
+      if(el.title == title){
+        el.isBookmarked ? el.isBookmarked = false : el.isBookmarked = true
+        this.dashboardService.changeBookmark(this.recommended).subscribe((res)=> console.log(res))
       }
     })
   }

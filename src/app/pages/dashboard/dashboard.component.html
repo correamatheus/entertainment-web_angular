@@ -3,18 +3,23 @@
     <app-menus></app-menus>
   </div>
   <div class="content">
-    <app-search-input (movieSearched)="receiveSearch($event)"></app-search-input>
+    <app-search-input
+      (movieSearched)="receiveSearch($event)"
+    ></app-search-input>
     <div class="searched" *ngIf="movieAndSerieFinded">
-
       <!-- <h2 class="title__searched">Searched</h2> -->
 
-      <div class="card__recommended"  *ngFor="let item of movieAndSerieFinded; index as i;">
+      <div
+        class="card__recommended"
+        *ngFor="let item of movieAndSerieFinded; index as i"
+      >
         <img
           class="recommended__img"
           [src]="item.thumbnail.regular.small"
           (mouseenter)="showPlayMouseOver(i)"
           (mouseleave)="hiddenPlayMouseOut(i)"
         />
+
         <img
           class="card_bookmark"
           [src]="
@@ -23,6 +28,7 @@
               : '../../../assets/nobookmarked.png'
           "
         />
+
         <span class="card_info">{{ item.year }}</span>
         <span class="card_info">{{ item.category }}</span>
         <span class="card_info">{{ item.rating }}</span>
@@ -33,18 +39,6 @@
           src="../../../assets/icon-play-withbackground.png"
         />
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
     <h2 class="title__trending">Trending</h2>
 
@@ -80,7 +74,10 @@
 
     <h2 class="title__recommended">Recommended for you</h2>
     <div class="container__recommended">
-      <div class="card__recommended" *ngFor="let item of recommended; index as i;">
+      <div
+        class="card__recommended"
+        *ngFor="let item of recommended; index as i"
+      >
         <img
           class="recommended__img"
           [src]="item.thumbnail.regular.small"
@@ -88,6 +85,7 @@
           (mouseleave)="hiddenPlayMouseOut(i)"
         />
         <img
+          (click)="bookmarked(item.title)"
           class="card_bookmark"
           [src]="
             item.isBookmarked

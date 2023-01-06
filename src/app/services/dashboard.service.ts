@@ -31,4 +31,8 @@ export class DashboardService {
       map((result) => result.filter((filtered) => filtered.title.toLowerCase().includes(movieAndSerieSearched.toLowerCase())))
     )
   }
+
+  changeBookmark(itensAtualizados: info[]){
+    return this.httpClient.put<info[]>(`${this.baseURL}`, itensAtualizados)
+  }
 }

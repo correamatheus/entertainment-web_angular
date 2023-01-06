@@ -111,6 +111,7 @@
 
 .card_bookmark{
   position:absolute;
+  cursor: pointer;
   /* padding: 8px;
   border-radius: 50%;
   background:rgba(16, 20, 30, 0.5);
